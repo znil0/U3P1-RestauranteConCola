@@ -1,5 +1,3 @@
-package data;
-
 /**
  * U3P1 - Aplicación que usa cola
  * @author 
@@ -8,6 +6,9 @@ package data;
  */
 
 // Esta clase almacena los datos del pedido.
+
+package data;
+
 public class Pedido {
     private String nombreCliente;
     private String idPedido;

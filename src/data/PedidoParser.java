@@ -8,6 +8,10 @@
 // Esta clase se encarga de manejar todo lo relacionado con los archivos de
 // texto.
 
+// Hasta ahora exporta e importa del mismo archivo, aunque lo ideal sería que le
+// de la opción al usuario de importar o exportar del archivo que este desee.
+// Hacer eso implica más trabajo y tiempo, pero no es algo demasiado complicado
+// de lograr. Con esto, creo que ya cumplimos la condición de usar archivos.
 
 package data;
 
@@ -63,7 +67,7 @@ public class PedidoParser {
                 numeroLinea++;
             }
         } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
+            return null;
         }
         
         return colaPedidosImportada;

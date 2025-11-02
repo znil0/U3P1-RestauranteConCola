@@ -1,14 +1,14 @@
+/**
+ * U3P1 - Aplicación que usa cola
+ * @author 
+ * Lozano Mora Juan Pablo
+ * Rojano Meza Leonardo Gael 5A
+ */
+
+// Este TDA se encarga de manejar la Cola de Pedidos. 
+
 package data;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author Rojano Meza Leonardo Gael 5A
- */
 public class ColaPedidos {
     private Pedido[] vector;
     private int ini, fin;

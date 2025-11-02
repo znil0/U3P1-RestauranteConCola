@@ -1,3 +1,12 @@
+/**
+ * U3P1 - Aplicación que usa cola
+ * @author 
+ * Lozano Mora Juan Pablo
+ * Rojano Meza Leonardo Gael 5A
+ */
+
+// Este es el JForm principal.
+
 package forms;
 
 import data.ColaPedidos;
@@ -6,15 +15,6 @@ import data.Pedido;
 import data.PedidoParser;
 import javax.swing.JOptionPane;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
-/**
- *
- * @author Rojano Meza Leonardo Gael 5A
- */
 public class MainForm extends javax.swing.JFrame {
 
     ColaPedidos colaPedidos;
@@ -284,7 +284,19 @@ public class MainForm extends javax.swing.JFrame {
         PedidoParser parser = new PedidoParser();
         
         // Importamos
-        colaPedidos = parser.importFromFile();
+        ColaPedidos colaPedidosImportada = parser.importFromFile();
+        
+        if (colaPedidosImportada != null) {
+            JOptionPane.showMessageDialog(null, 
+                "Se ha importado con éxito la cola de pedidos.", 
+                "Cola importada", 
+                JOptionPane.INFORMATION_MESSAGE);
+            colaPedidos = colaPedidosImportada;
+        }
+        else JOptionPane.showMessageDialog(null, 
+                "No fue posible exportar la cola de pedidos. \nEsto puede deberse a que no haya ningún archivo guardado o a un problema de memoria.", 
+                "Error", 
+                JOptionPane.ERROR_MESSAGE);
         
         // Actualizar TextArea de la Cola
         taColaPedidos.setText(colaPedidos.mostrar());
@@ -300,7 +312,15 @@ public class MainForm extends javax.swing.JFrame {
         PedidoParser parser = new PedidoParser();
         
         // Exportamos
-        parser.exportToFile(colaPedidos);
+        boolean result = parser.exportToFile(colaPedidos);
+        if (result) JOptionPane.showMessageDialog(null, 
+                "Se ha exportado con éxito la cola de pedidos.", 
+                "Cola exportada", 
+                JOptionPane.INFORMATION_MESSAGE);
+        else JOptionPane.showMessageDialog(null, 
+                "No fue posible exportar la cola de pedidos", 
+                "Error", 
+                JOptionPane.ERROR_MESSAGE);
         
         // Al exportar se vacía la cola, pues no se puede acceder a los elementos
         // del medio si no se vacía antes.

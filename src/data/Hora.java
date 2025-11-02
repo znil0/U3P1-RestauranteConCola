@@ -1,14 +1,15 @@
+/**
+ * U3P1 - Aplicación que usa cola
+ * @author 
+ * Lozano Mora Juan Pablo
+ * Rojano Meza Leonardo Gael 5A
+ */
+
+// Esta clase se encarga de almacenar la hora. No me quise complicar con
+// el Date.
+
 package data;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author Rojano Meza Leonardo Gael 5A
- */
 public class Hora {
     private int horas;
     private int minutos;
