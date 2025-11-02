@@ -1,3 +1,5 @@
+package data;
+
 /**
  * U3P1 - Aplicación que usa cola
  * @author 
@@ -7,13 +9,13 @@
 
 // Esta clase almacena los datos del pedido.
 public class Pedido {
-    String nombreCliente;
-    String idPedido;
-    String nombrePlatillo;
-    int cantidad;
-    double precio;
-    Hora hora;
-    int prioridad;
+    private String nombreCliente;
+    private String idPedido;
+    private String nombrePlatillo;
+    private int cantidad;
+    private double precio;
+    private Hora hora;
+    private int prioridad;
 
     public Pedido(String nombreCliente, String idPedido, String nombrePlatillo, int cantidad, double precio, Hora hora, int prioridad) {
         this.nombreCliente = nombreCliente;
@@ -89,5 +91,9 @@ public class Pedido {
     @Override
     public String toString() {
         return "Pedido{" + "nombreCliente=" + nombreCliente + ", idPedido=" + idPedido + ", nombrePlatillo=" + nombrePlatillo + ", cantidad=" + cantidad + ", precio=" + precio + ", hora=" + hora.getHora("HH:MM") + ", prioridad=" + prioridad + '}';
+    }
+    
+    public String abbreviatedToString(){
+        return "Pedido | NC: " + nombreCliente + ", ID: " + idPedido + ", Hora: " + hora.getHora("HH:MM");
     }
 }
