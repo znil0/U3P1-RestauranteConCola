@@ -9,7 +9,7 @@
 
 package forms;
 
-import data.ColaPedidos;
+import data.ColaCircularPedidos;
 import data.Hora;
 import data.Pedido;
 import data.PedidoParser;
@@ -17,12 +17,12 @@ import javax.swing.JOptionPane;
 
 public class MainForm extends javax.swing.JFrame {
 
-    ColaPedidos colaPedidos;
+    ColaCircularPedidos colaPedidos;
     
     public MainForm() {
         initComponents();
         
-        colaPedidos = new ColaPedidos(20);
+        colaPedidos = new ColaCircularPedidos(20);
     }
 
     /**
@@ -284,7 +284,7 @@ public class MainForm extends javax.swing.JFrame {
         PedidoParser parser = new PedidoParser();
         
         // Importamos
-        ColaPedidos colaPedidosImportada = parser.importFromFile();
+        ColaCircularPedidos colaPedidosImportada = parser.importFromFile();
         
         if (colaPedidosImportada != null) {
             JOptionPane.showMessageDialog(null, 

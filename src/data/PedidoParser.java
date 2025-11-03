@@ -27,7 +27,7 @@ public class PedidoParser {
     // Método exportToFile(ColaPedidos)
     // Exporta la cola de pedidos a un archivo de texto llamado pedidos_guardados.txt
     // Si no logra hacerlo retorna un false.
-    public boolean exportToFile(ColaPedidos colaPedidos){
+    public boolean exportToFile(ColaCircularPedidos colaPedidos){
         // No sabía que se podía usar el try con paréntesis, según el internet
         // a eso se le llama "try-with-resources", y sirve para abrir y cerrar
         // los Writer y Reader automáticamente.
@@ -48,8 +48,8 @@ public class PedidoParser {
     // Método importFromFile(ColaPedidos)
     // Importa la cola de pedidos de un archivo de texto llamado pedidos_guardados.txt
     // Si no logra hacerlo retorna un null.
-    public ColaPedidos importFromFile(){
-        ColaPedidos colaPedidosImportada = new ColaPedidos(20);
+    public ColaCircularPedidos importFromFile(){
+        ColaCircularPedidos colaPedidosImportada = new ColaCircularPedidos(20);
         
         try (BufferedReader reader = new BufferedReader(new FileReader("pedidos_guardados.txt"))) {
             // Básicamente, escanea línea por línea. Cada línea se transforma a un Pedido
